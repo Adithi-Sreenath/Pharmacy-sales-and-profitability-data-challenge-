@@ -66,8 +66,12 @@ Pharmacy distributors operate in structurally complex environments:
 | Granularity | Daily (2024–2025) |
 
 ### Dimensional Model — Star Schema
+
 ![Star Schema](assets/star_schema.png)
-**Why star schema?** Clean drilldowns (Country → Region → Pharmacy), no transaction duplication, scalable performance, and clear separation of business entities. This is industry-standard BI architecture — not a flat spreadsheet model.
+
+**Why star schema?**
+Clean drilldowns (Country → Region → Pharmacy), no transaction duplication, scalable performance, and clear separation of business entities. T
+his is industry-standard BI architecture — not a flat spreadsheet model.
 
 ---
 
