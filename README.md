@@ -1,199 +1,138 @@
-# 🏥 Pharmacy Sales & Profitability Analytics
+# Retail Yield Intelligence & Operational Diagnostics — European Pharmacy Network
 
-> **Power BI · Dimensional Modeling · KPI Engineering · Promotion Optimization**
+### Network Profile (2024 - 2025)
+* **Network Size**: 120 Pharmacies | 8 European Countries
+* **Sales Performance**: +4.5% YoY Revenue Growth (€4.41M Total)
+* **Portfolio Margin**: 28.11% Gross Margin (+21 bps YoY)
+* **Key Focus**: 12 "Falling Knife" stores undergoing active margin decay
 
 ---
 
 ## Executive Summary
 
-This project analyzes daily transaction-level data from a European pharmacy distributor operating across **8 countries** to evaluate revenue growth, profitability drivers, geographic performance, and promotion effectiveness.
+This project analyzed a 120-store European pharmacy network to identify why revenue growth was hiding margin losses. The project isolates underperforming stores, segments them by operational trajectory, and designs targeted store-level recovery plans.
 
-The core objective was to design an **interactive, decision-ready Power BI dashboard** that enables stakeholders to:
+The core finding is that while the network grew total sales by 4.5% and overall gross margin to 28.11% (+21 bps), standard reporting masked a critical issue: 12 key locations were losing their medical identity. These stores were trading high-margin prescriptions for low-margin cosmetic and personal care products.
 
-- Monitor overall financial health
-- Diagnose geographic performance differences
-- Identify high-volume but low-margin risks
-- Benchmark pharmacy productivity
-- Evaluate whether promotions are creating or destroying value
+![Hero Image](assets/hero.png)
 
----
-
-## 🔗 Live Dashboard Access
-
-You can explore the fully interactive Power BI dashboard here:
-
-👉 [Open Live Dashboard](https://app.powerbi.com/view?r=eyJrIjoiYzdiOGY3ZjItMmI0My00ZTlkLTg0N2EtNDE1MzM5M2QwMmJiIiwidCI6IjQ2NTRiNmYxLTBlNDctNDU3OS1hOGExLTAyZmU5ZDk0M2M3YiIsImMiOjl9)
-
-The report supports:
-- Drilldowns from Country → Region → Pharmacy
-- Product-level profitability exploration
-- Promotion effectiveness analysis
-- Year-over-year comparison (2024 vs 2025)
+> [!NOTE]
+> **Core Diagnostic Focus**: This analysis moves past generic dashboards to answer one key operational question: *Is our sales growth healthy, or are we discounting our way into structural margin collapse?*
 
 ---
 
-## Business Problem
+## The Business Problem
 
-Pharmacy distributors operate in structurally complex environments:
+Standard retail reports often overlook margin leaks. A store can grow its sales volume through heavy discounts while losing its high-margin baseline business.
 
-- Revenue is influenced by geography, product mix, store size, and promotions
-- High sales volume does not always translate into strong profitability
-- Network expansion can dilute productivity if not monitored
-- Blanket promotions may increase revenue but erode margin
-
-**Leadership required visibility into:**
-
-| Question | Analytics Layer |
-|----------|----------------|
-| Where is revenue and margin generated? | Geographic Performance (Page 2) |
-| Is growth sustainable or discount-driven? | Executive Overview (Page 1) |
-| Which pharmacies outperform peers? | Store Benchmarking (Page 2) |
-| What drives profit vs. volume? | Product Analysis (Page 3) |
-| Do promotions generate incremental demand? | Promotion Strategy (Page 4) |
+| Strategic Diagnostic Question | Why Standard Reporting Fails | Analytical Solution Implemented |
+|:---|:---|:---|
+| Is growth healthy or discount-driven? | Gross revenue totals hide margin compression and promotional dependency. | Promo Margin Impact Analysis to isolate incremental lift vs. margin erosion. |
+| Which markets are structurally efficient? | Absolute revenue totals favor high-volume markets regardless of store productivity. | Average Revenue per Pharmacy and Yield to evaluate baseline retail efficiency. |
+| Why are specific stores underperforming? | Revenue ranking misidentifies small but highly efficient stores as problems. | Yield-First Store Segmentation to measure value captured per unit sold. |
+| Where should intervention capital go first? | Underperforming stores look equally stagnant without trajectory profiling. | YoY Yield Trajectory Mapping to isolate deteriorating stores from self-correcting ones. |
 
 ---
 
-## Dataset & Analytical Model
+## Key Insights
 
-### Data Scope
-
-| Dimension | Scale |
-|-----------|-------|
-| Transactions | 62,139 |
-| Pharmacies | 120 |
-| Products | 220 SKUs |
-| Countries | 8 European |
-| Granularity | Daily (2024–2025) |
-
-### Dimensional Model — Star Schema
-
-![Star Schema](assets/star_schema.png)
-
-**Why star schema?**
-Clean drilldowns (Country → Region → Pharmacy), no transaction duplication, scalable performance, and clear separation of business entities. T
-his is industry-standard BI architecture — not a flat spreadsheet model.
+* **The Expansion Paradox:** Germany added a store and grew unit volume by 1,000 in 2025, yet total revenue fell by €5,000 due to margin erosion from promotional discounting. Conversely, the Netherlands added zero stores but grew per-store revenue by €1,340 by maintaining strict category discipline.
+* **Promotional Value Destruction:** Promotions compressed margins by -9.08 percentage points (non-promoted ~32% vs. promoted ~23%) but generated a -2.39% volume lift. Discounting destroyed margin with zero incremental volume.
+* **The Poznan Signal:** In Poland (a market where 100% of stores underperform), Poznan #068 grew yield by +12.4% organically. This indicates an internal recovery playbook that can be codified and scaled.
+* **Clinical Identity Shift:** Across all 12 deteriorating stores, yield collapse was driven by a drop in clinical prescription share, substituted by low-yield wellness and personal care products.
 
 ---
 
-## Core KPIs
+## Analytical and Diagnostic Framework
 
-### Financial Health
+To evaluate stores fairly regardless of size or location, this analysis uses **Yield** (Revenue / Units Sold) as the core performance metric. Yield separates store size from operational efficiency, showing how much value a store captures from each customer transaction.
 
-| KPI | Value |
-|-----|-------|
-| Total Revenue | €8.63M |
-| Total Margin | €2.42M |
-| Gross Margin % | 28.04% |
-| Units Sold | 446K |
+### Store Trajectory Segmentation
+Not all underperforming stores require the exact same response. By mapping YoY yield trends, we segment the 42 underperforming stores into three categories:
 
-### Store-Normalized Productivity
-
-| Metric | 2024 | 2025 |
-|--------|------|------|
-| Active Pharmacies | 113 | 120 |
-| Avg Revenue / Pharmacy | €37,375 | €36,755 |
-
-> **Insight:** Revenue grew, but average productivity declined slightly — indicating expansion into lower-performing markets or ramp-up lag in new stores. This KPI prevents misleading interpretations of raw revenue growth.
-
-### Additional KPIs Engineered
-
-- **Geographic Margin Efficiency** — Margin % benchmarked at global, country, region, and store level
-- **Concentration Risk** — Top 10% store revenue share, measuring network dependency on high-performing pharmacies
+* **Falling Knives (12 Stores):** Yield declining >8% YoY. These stores suffer from active category erosion and require immediate turnaround taskforce intervention.
+* **Self-Correcting (21 Stores):** Yield is actively improving. These stores require no immediate resource allocation, only monitoring to extract local best practices.
+* **Stagnant (9 Stores):** Consistent low yield across 24 months. These represent structural location issues requiring consolidation or format overhauls.
 
 ---
 
-## Dashboard Architecture
+## Case Study 1: Barcelona HealthPoint #093
+### The Retail Trap and Symmetrical Substitution
 
-### Page 1 — Executive Overview
+Barcelona #093 serves as a clear illustration of the Retail Trap. While unit volume fell slightly (-6.7%) and overall gross margin appeared stable, the store's top line collapsed by -16.9%.
 
-**Purpose:** Rapid assessment of overall business health.
+![Bar Chart](assets/barc.jpeg)
 
-![Page 1](assets/page-1.png)
-
-| Finding | Detail |
-|---------|--------|
-| YoY Revenue | 2025 consistently exceeded 2024 |
-| Margin Stability | 27.7%–28.5% range maintained |
-| Peak Growth | December +12.9% YoY |
-| Seasonal Dip | July–August softness observed |
-
-✅ Growth appears structurally sustainable, not discount-driven.
+1. **Symmetrical Substitution:** The pharmacy traded clinical prescription volume (-10.5 pp share) directly for retail personal care products (+8.0 pp share).
+2. **Value Erosion:** Staff worked nearly as hard (fulfilling similar unit transactions) but generated -10.9% less yield per unit (€19.10 to €17.02).
+3. **Loss of the Chronic Patient:** The top-selling clinical anchor from 2024, NeuroMed Antidepressant, vanished from the top 10 products in 2025, replaced by low-loyalty shampoos and cosmetics. The store traded high-LTV, recurring medical patients for easily poached convenience shoppers.
 
 ---
 
-### Page 2 — Geographic Performance & Store Benchmarking
+## Case Study 2: Katowice HealthPoint #080
+### Revenue Mix Shift and Margin Preservation
 
-**Purpose:** Diagnose where performance differences originate.
+Katowice #080 represents a scenario where financial snapshot metrics reveal a significant revenue drop, but gross margin percentage was preserved through careful category shift monitoring.
 
-![page-2](assets/page-2.png)
+![KAT Image](assets/kat.jpeg)
 
-- **Germany** leads revenue contribution
-- Store productivity varies materially by country
-- Urban/Suburban/Rural mix impacts performance structure
-- Network expansion reduced average productivity slightly
-
-**Analytical tools:** Drilldown matrix (Country → Region → Pharmacy), productivity scatter plots, geographic contribution heatmaps, margin benchmarking vs. global baseline.
+1. **Revenue Mix Shift:** Grouped bar charts show that prescription share shifted from 31.5% to 28.2%, while OTC and personal care shares increased.
+2. **Winners and Losers:** The horizontal bar chart illustrates the exact shift, with prescription experiencing the largest percentage point decline (-3.3 pp), while personal care grew (+1.8 pp).
+3. **Financial Snapshot:** Despite a total revenue drop in 2025, the store preserved its margin percentage by focusing on high-margin items within personal care and OTC, preventing a general margin collapse.
 
 ---
 
-### Page 3 — Product & Profitability Drivers
+## Strategic Recovery Roadmap
 
-**Purpose:** Identify what drives profit vs. what drives volume.
-![page-3](assets/page-3.png)
+Recovery initiatives were prioritized based on implementation difficulty and expected margin impact.
 
-| Portfolio Stat | Value |
-|----------------|-------|
-| SKUs | 220 |
-| Brands | 32 |
-| Categories | 5 |
-| Branded / Generic split | 85% / 15% |
-| Discontinued products | 16% |
+### 1. Pricing and Discount Discipline (0–30 Days)
+* **Target:** 7 Promotion Addict stores (e.g., Vienna #115 running a 25% promo rate).
+* **Action:** Cap store-level promotions at a maximum of 12% category coverage. Shift from simple price cuts to product bundling to preserve baseline margins.
+* **Expected Signal:** Yield recovery within 30 days.
 
-- Majority of SKUs operate in the **25–35% unit margin band**
-- OTC is the largest category by product count
-- Portfolio diversification: **Shannon Index 3.40**
-- High-volume, low-margin traps identified
+### 2. Assortment Optimization (1–6 Months)
+* **Target:** 13 Prescription Capture stores & 3 Catalogue Gap stores (e.g., Graz #102).
+* **Action:** Add 10–15 high-margin specialty items (like medical devices or therapeutic skincare) to lift baseline basket value. Convert low-yield shelf space into private clinical consultation areas.
+* **Expected Signal:** +€2–3 list price uplift within 90 days.
 
-> ⚠️ Revenue-heavy categories are not always profit-heavy categories.
+### 3. Structural Overhaul and Consolidation (6–18 Months)
+* **Target:** 19 Polish and Italian structural underperformers.
+* **Action:** Audit local catchments. Transition selected pilot stores to a specialized HealthPoint Pro consulting format; consolidate overlapping storefronts.
+* **Expected Signal:** Long-term margin stabilization.
 
----
-
-### Page 4 — Promotion Strategy & Structural Levers
-
-**Purpose:** Evaluate whether promotions create incremental value.
-
-![page-4](assets/page-4.png)
-
-| Metric | Value |
-|--------|-------|
-| Promotion Margin Impact | –9.08% |
-| Promo Volume Lift | –2.39% |
-| Price Realization | 97% |
-
-**Interpretation:** Promotions reduce margin significantly without generating meaningful incremental demand — indicating structural pricing inefficiency and over-reliance on blanket discounting.
-
-**Strategic Recommendations:**
-
-1. Redesign discount depth
-2. Eliminate portfolio-wide blanket promotions
-3. Focus on high-elasticity SKUs
-4. Maintain strong base pricing discipline
+```mermaid
+gantt
+    title Recovery Roadmap Timeline & Expected Value Realization
+    dateFormat  X
+    axisFormat %d days
+    
+    section Track 1: Pricing
+    Implement Promo Caps          :active, 0, 30
+    Yield Stabilization           :after 0, 60
+    
+    section Track 2: Assortment
+    Premium Assortment Expansion  : 30, 120
+    Clinical Floor Redesign       : 60, 180
+    
+    section Track 3: Structural
+    Catchment Audit               : 30, 90
+    HealthPoint Pro Format Pilot  : 180, 360
+```
 
 ---
 
-## Key Business Insights
+## Appendix: Analytical Architecture and Technical Implementation
 
-1. **Revenue growth in 2025 is sustainable** — not margin-destructive
-2. **Store expansion slightly diluted productivity** — new markets underperforming established stores
-3. **Promotions structurally destroy margin** — without generating demand lift
-4. **Geographic profitability varies materially** — targeted country strategies needed
-5. **Product mix drives margin** more than geography alone
-6. **Network is diversified** but contains identifiable high-risk concentration zones
+* **Yield Framework (DAX / Power BI)**: 
+  * **Formula**: $\text{Yield} = \frac{\text{RevenueEUR}}{\text{UnitsSold}}$. This isolates unit productivity from store traffic volume.
+  * **Implementation**: Built dynamic DAX measures leveraging conditional filter contexts (`CALCULATE`, `KEEPFILTERS`) to track YoY changes in Yield at the product category level. This highlighted that while unit volumes remained stable in "Falling Knife" stores, Yield per unit was deteriorating.
+  * **Promo Margin Impact**: Formulated price realization metrics ($\text{Price Realization} = \frac{\text{Actual Revenue}}{\text{List Price Revenue}}$) to quantify the exact margin erosion caused by promotional discounting.
 
----
+* **Dimensional Modeling (Star Schema)**: 
+  * **Architecture**: Designed and implemented a dimensional model containing one central fact table (`FactSales`) and four dimension tables (`DimProduct`, `DimPharmacy`, `DimDate`, and `DimPromo`).
+  * **Granularity**: Daily transaction line level (62,139 records), optimized using dynamic relationships to support seamless Country-to-Store and Category-to-SKU rollups without duplicating sales metrics.
 
-## Tech Stack
-
-![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=flat&logo=powerbi&logoColor=black)
-![DAX](https://img.shields.io/badge/DAX-0078D4?style=flat&logo=microsoft&logoColor=white)
-![Star Schema](https://img.shields.io/badge/Star%20Schema-Dimensional%20Modeling-6DB33F?style=flat)
+* **Store Trajectory Diagnostics (Pandas / Jupyter)**: 
+  * **Methodology**: Wrote Python scripts to automatically ingest raw transactional data, parse chronological DateKeys into Years, and compute percentage point changes in category revenue share ($\Delta = \text{Share}_{2025} - \text{Share}_{2024}$).
+  * **Anomaly Detection**: Configured an automated threshold analysis that flagged any store where Prescription revenue share dropped by $>5.0$ percentage points while Personal Care share increased by $>5.0$ percentage points, mapping the precise signature of the "Retail Trap."
