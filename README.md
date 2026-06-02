@@ -1,4 +1,4 @@
-# Retail Yield Intelligence & Operational Diagnostics — European Pharmacy Network
+# Retail Yield Intelligence & Operational Diagnostics: European Pharmacy Network
 
 ### Network Profile (2024 - 2025)
 * **Network Size**: 120 Pharmacies | 8 European Countries
